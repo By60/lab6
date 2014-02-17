@@ -47,35 +47,7 @@ function onReceiveProjectDetails(result) {
  */
 function randomizeColors(e) {
 	e.preventDefault();
-
-	console.log("Starting POST request to ADS...");
-
-	// var request = new XMLHttpRequest();
-	// var data = new FormData();
-	// data.append('input_user_id', '3');
-	// data.append('input_recipients', '5105555555');
-	// data.append('input_time', '2/17/14 2:45PM');
-	// data.append('input_message', 'This is a test message');
-	
-	// request.onload = function () {
- //    	// do something to response
- //    	console.log("Response: " + this.responseText);
-	// };
-	// request.open("POST", "http://www.aerodroid.com/remindly/send_remindly.php", true);
-	// request.setRequestHeader("Access-Control-Allow-Origin", "*");
-	// request.send(data);
-
-	//$.get("/palette", onReceivePalette);
-	$.post("http://www.aerodroid.com/remindly/send_remindly.php",
-		{
-			"input_user_id" : "3",
-			"input_recipients" : "510555555",
-			"input_time" : "2/18/14 3:45pm",
-			"input_message" : "Hey this is a POST test."
-		},
-	onFinishPost);
-
-	console.log("Sent POST request.");
+	$.get("/palette", onReceivePalette);
 }
 
 function onFinishPost(result) {
