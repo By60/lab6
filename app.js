@@ -37,6 +37,12 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.all('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
+
 // Add routes here
 app.get('/', index.view);
 app.get('/project/:id', project.projectInfo);
